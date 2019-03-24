@@ -1,0 +1,106 @@
+package TestCases;
+
+import org.testng.annotations.Test;
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Factory;
+import java.io.IOException;
+import java.lang.reflect.Method;
+import java.util.concurrent.TimeUnit;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import Reports.Reporter;
+import SupportingClass.CommonFunctions;
+
+//@Listeners(Reports.Listeners.class)
+public class TC001 extends CommonFunctions {
+
+	public String path = System.getProperty("user.dir");
+
+	public TC001() {
+		System.out.println("default contructor");
+		System.setProperty("webdriver.chrome.driver", path + "\\Driver\\chromedriver.exe");
+	}
+
+	public TC001(String string) {
+
+	}
+
+	@BeforeClass(enabled = false)
+	public void beforeClass() {
+		String className = this.getClass().getName();
+		try {
+			className = (className.split("\\.", 2))[1];
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		Reporter.StartTestCase(className, "Decription");
+	}
+
+	@BeforeMethod
+	public void nameBefore(Method method) {
+		System.out.println("Test name: " + method.getName());
+		Reporter.StartTestCase(method.getName(), "Decription");
+	}
+
+	@Test
+	public void LaunchGoogle() throws IOException {
+		WebDriver driver = new ChromeDriver();
+		try {
+
+			driver.get("https://www.google.com");
+			Explicitwait(driver, "//*[@type='text']");
+			driver.manage().window().maximize();
+			Reporter.TestStep(driver, "PASS", "Launched Google");
+		} catch (Exception e) {
+		} finally {
+			driver.quit();
+			Reporter.EndTest();
+		}
+
+	}
+
+	@Test(enabled = true, retryAnalyzer = Reports.RetryTimes.class)
+	public void ToolsQA() throws IOException {
+
+		WebDriver driver = new ChromeDriver();
+		try {
+
+			driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+			driver.get("https://www.toolsqa.com/selenium-webdriver/testng-listeners/");
+			driver.manage().window().maximize();
+			Explicitwait(driver,
+					"(//a[@href='http://toolsqa.com/selenium-webdriver/configure-eclipse-with-selenium-webdriver/'])[2]");
+			js_scrollDown(driver);
+			Reporter.TestStep(driver, "PASS", "First down scroll by pixels");
+			js_scrollUp(driver);
+			Reporter.TestStep(driver, "PASS", "First up scroll by pixels");
+
+			js_scrollBottom(driver);
+			Reporter.TestStep(driver, "PASS", "Scrolled to bottom");
+
+			js_scrolltoView(driver, driver.findElement(By.xpath(
+					"(//a[@href='http://toolsqa.com/selenium-webdriver/configure-eclipse-with-selenium-webdriver/'])[2]")));
+			Reporter.TestStep(driver, "PASS", "First view scroll");
+			js_click(driver, driver.findElement(By.xpath(
+					"(//a[@href='http://toolsqa.com/selenium-webdriver/configure-eclipse-with-selenium-webdriver/'])[2]")));
+			Reporter.TestStep(driver, "PASS", "First click js scroll");
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			driver.quit();
+			Reporter.EndTest();
+		}
+	}
+
+	@Factory
+	public Object[] factory() {
+		return new Object[] {
+				// new TC001("first")
+
+		};
+	}
+
+}
