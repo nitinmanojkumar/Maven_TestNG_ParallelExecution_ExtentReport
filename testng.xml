@@ -13,6 +13,6 @@
 			<class name="TestCases.TC003">
 			</class>
 		</classes>
-	</test> <!-- Test -->
+	</test> <!--Test-->
 
 </suite> <!-- Suite -->
