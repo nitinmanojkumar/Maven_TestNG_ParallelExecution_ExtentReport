@@ -9,7 +9,7 @@
 
 	<test name="Test">
 		<classes>
-			<class name="TestCases.SampleTestJenkins"></class>
+			<class name="TestCases.SampleTest2Jenkins"></class>
 		</classes>
 	</test> <!--Test-->
 
