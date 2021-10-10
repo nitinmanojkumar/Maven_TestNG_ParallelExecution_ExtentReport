@@ -1,0 +1,61 @@
+ <!DOCTYPE html>
+<html>
+<head>
+<title>Page Title</title>
+</head>
+<body>
+
+<h1>My First Heading</h1>
+<p>My first paragraph.</p>
+<div id="div1">
+<input id="input" type="number" value="Phone Number:"><br>
+<button disabled="true">Still Disabled</button><br>
+<input id="Button" type="button" value="+" style="background-color:grey" onclick="disable();"/>
+<input id="Button1" type="button" value="-" style="background-color:red" onclick="enable();"/>
+<p id="p1">This is a paragraph.</p>
+<p id="p2">This is another paragraph.</p>
+<p id="p3"></p>
+<p id="p4"></p>
+</div>
+
+<script>
+var para = document.createElement("p");
+var node = document.createTextNode("Value of newly created tag This is new.");
+var att = document.createAttribute("class");
+att.value = "democlass";
+para.setAttributeNode(att);  
+para.appendChild(node);
+var element = document.getElementById("div1");
+element.appendChild(para);
+
+var getAtt=document.getElementsByClassName("democlass")[0].getAttribute("class");
+var getText=document.getElementsByClassName("democlass")[0].getInnerHTML();
+document.getElementById("p3").innerHTML="Value of P3 getAttribute of class whose classname is democlass is : "+getAtt;
+document.getElementById("p4").innerHTML="Value of P4 get the value whose classname is democlass is : "+getText;
+window.alert(document.getElementById("input").getAttribute("value"));
+
+document.getElementById("Button").disabled = false;
+document.getElementById("Button1").disabled = true;
+ function disable(){
+window.alert('+ button disabled, hit - button or refresh to enable it!!');
+document.getElementById("Button").disabled = true;
+document.getElementById("Button1").disabled = false;
+ }
+ function enable(){
+ window.alert('+ button enabled and - button disabled!!');
+document.getElementById("Button1").disabled = true;
+document.getElementById("Button").disabled = false;
+ }
+ </script>
+
+<form action=".\propANDattributes2.html">
+  <label for="fname">First name:</label><br>
+  <input type="text" id="fname" name="fname" value="John"><br>
+  <label for="lname">Last name:</label><br>
+  <input type="text" id="lname" name="lname"><br><br>
+  <input type="submit" value="Submit">
+</form> 
+
+
+</body>
+</html>
