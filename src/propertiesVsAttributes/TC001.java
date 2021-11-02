@@ -17,7 +17,12 @@ public class TC001 {
 
 	public static void main(String[] args) {
 		try {
-			System.setProperty("webdriver.chrome.driver", path + "\\Driver\\chromedriver.exe");
+			
+			for(int i=0;i<args.length;i++) {
+				System.out.println("Number : "+i);
+			}
+			
+			/*System.setProperty("webdriver.chrome.driver", path + "\\Driver\\chromedriver.exe");
 			System.out.println(System.getProperty("user.dir"));
 			driver = new ChromeDriver();
 			driver.get(System.getProperty("user.dir") + "//src//propertiesVsAttributes//propANDattributes.html");
@@ -31,7 +36,7 @@ public class TC001 {
 			System.out.println("HTML Value remains unchanged but the DOM value will be changed");
 			System.out.println("HTMLValue : "+HTMLValue+"\n"+"attributeValue : "+attValue+"\n"+"DOMPropertyValue : "+DOMPropertyValue);
 
-			driver.close();
+			driver.close();*/
 		} catch (Exception e) {
 			e.printStackTrace();
 		} finally {

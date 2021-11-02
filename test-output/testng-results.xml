@@ -2,24 +2,20 @@
 <testng-results skipped="0" failed="0" ignored="1" total="2" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="4760" started-at="2021-10-10T09:47:52 IST" finished-at="2021-10-10T09:47:57 IST">
+  <suite name="Default suite" duration-ms="5099" started-at="2021-10-14T01:18:44 IST" finished-at="2021-10-14T01:18:49 IST">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="4760" started-at="2021-10-10T09:47:52 IST" finished-at="2021-10-10T09:47:57 IST">
-      <class name="TestCases.TC001">
-        <test-method status="PASS" signature="beforeClass()[pri:0, instance:TestCases.TC001@26a7b76d]" name="beforeClass" is-config="true" duration-ms="239" started-at="2021-10-10T09:47:52 IST" finished-at="2021-10-10T09:47:52 IST">
+    <test name="Default test" duration-ms="5099" started-at="2021-10-14T01:18:44 IST" finished-at="2021-10-14T01:18:49 IST">
+      <class name="uploadDownloadPDF.download_Upload_readPDF">
+        <test-method status="PASS" signature="launchChrome()[pri:0, instance:uploadDownloadPDF.download_Upload_readPDF@3e57cd70]" name="launchChrome" is-config="true" duration-ms="1801" started-at="2021-10-14T01:18:44 IST" finished-at="2021-10-14T01:18:46 IST">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- beforeClass -->
-        <test-method status="PASS" signature="getText()[pri:0, instance:TestCases.TC001@26a7b76d]" name="getText" duration-ms="3920" started-at="2021-10-10T09:47:52 IST" finished-at="2021-10-10T09:47:56 IST">
+        </test-method> <!-- launchChrome -->
+        <test-method status="PASS" signature="downloadFileOnPreviewType()[pri:0, instance:uploadDownloadPDF.download_Upload_readPDF@3e57cd70]" name="downloadFileOnPreviewType" duration-ms="3247" started-at="2021-10-14T01:18:46 IST" finished-at="2021-10-14T01:18:49 IST">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- getText -->
-        <test-method status="PASS" signature="afterclass()[pri:0, instance:TestCases.TC001@26a7b76d]" name="afterclass" is-config="true" duration-ms="530" started-at="2021-10-10T09:47:56 IST" finished-at="2021-10-10T09:47:57 IST">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- afterclass -->
-      </class> <!-- TestCases.TC001 -->
+        </test-method> <!-- downloadFileOnPreviewType -->
+      </class> <!-- uploadDownloadPDF.download_Upload_readPDF -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
