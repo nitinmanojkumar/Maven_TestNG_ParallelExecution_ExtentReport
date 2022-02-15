@@ -45,7 +45,7 @@ public class TC001 extends CommonFunctions {
 		return new Object[][] { { "data one" } ,{"data two"}};
 	}
 
-	@Test(dataProvider = "dp")
+	@Test(dataProvider = "dp", enabled=false)
 	public void LaunchGoogle(String str) throws IOException {
 		WebDriver driver = new ChromeDriver();
 		reporter.StartTestCase("LaunchGoogle", str);
@@ -62,6 +62,16 @@ public class TC001 extends CommonFunctions {
 			reporter.FlushResult();
 		}
 
+	}
+	
+	@Test
+	public void getText() {
+		WebDriver driver = new ChromeDriver();
+		driver.get(System.getProperty("user.dir")+"\\HTML\\GetText.html");
+		driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
+		System.out.println(driver.findElement(By.xpath("//p")).getSize());
+		System.out.println(driver.findElement(By.xpath("//p/strong")).getText());
+		driver.quit();
 	}
 
 

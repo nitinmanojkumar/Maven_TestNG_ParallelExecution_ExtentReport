@@ -5,6 +5,7 @@ import java.lang.reflect.Method;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterClass;
@@ -45,6 +46,8 @@ public class TC003 extends CommonFunctions{
 			driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 			driver.get("https://www.toolsqa.com/selenium-webdriver/testng-listeners/");
 			driver.manage().window().maximize();
+			
+			
 			Explicitwait(driver,
 					"(//a[@href='http://toolsqa.com/selenium-webdriver/configure-eclipse-with-selenium-webdriver/'])[2]");
 			js_scrollDown(driver);

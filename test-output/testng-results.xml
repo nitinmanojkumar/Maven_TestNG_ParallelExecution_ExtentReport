@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
+<testng-results skipped="0" failed="0" ignored="1" total="2" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="116" started-at="2020-04-15T18:35:43Z" finished-at="2020-04-15T18:35:43Z">
+  <suite name="Default suite" duration-ms="6140" started-at="2021-11-16T19:31:15 IST" finished-at="2021-11-16T19:31:21 IST">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="116" started-at="2020-04-15T18:35:43Z" finished-at="2020-04-15T18:35:43Z">
+    <test name="Default test" duration-ms="6140" started-at="2021-11-16T19:31:15 IST" finished-at="2021-11-16T19:31:21 IST">
       <class name="TestCases.SampleTestJenkins">
-        <test-method status="PASS" signature="test()[pri:0, instance:TestCases.SampleTestJenkins@475530b9]" name="test" duration-ms="36" started-at="2020-04-15T18:35:43Z" finished-at="2020-04-15T18:35:43Z">
+        <test-method status="PASS" signature="tes1t()[pri:2, instance:TestCases.SampleTestJenkins@7a1ebcd8]" name="tes1t" duration-ms="6037" started-at="2021-11-16T19:31:15 IST" finished-at="2021-11-16T19:31:21 IST">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- test -->
+        </test-method> <!-- tes1t -->
       </class> <!-- TestCases.SampleTestJenkins -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->

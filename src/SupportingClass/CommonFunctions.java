@@ -61,6 +61,12 @@ public class CommonFunctions {
 		js.executeScript("window.scrollTo(0,document.body.scrollHeight)");
 		return true;
 	}
+	
+	public static boolean js_scrollIntoView(WebDriver driver, WebElement element) {
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element);
+		return true;
+	}
 
 	public static boolean Robot_pressDownkey(WebDriver driver) throws AWTException {
 		Robot robot=new Robot();
